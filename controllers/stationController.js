@@ -7,16 +7,20 @@ class StationController {
       const station = await stationService.createStation(req.body);
       res.status(statusCode.CREATED).json(station);
     } catch (error) {
+      // Amitesh: why next and why did not throw the error?
       next(error); 
     }
   }
 
   async getAllStations(req, res, next) {
     try {
-      const stations = await stationService.getAllStations();
+      const page = parseInt(req.query.page, 10) || 1;
+      const pageSize = parseInt(req.query.pageSize, 10) || 10;
+
+      const stations = await stationService.getAllStations(page, pageSize);
       res.status(statusCode.OK).json(stations);
     } catch (error) {
-      next(error); 
+      next(error);
     }
   }
 
@@ -43,7 +47,7 @@ class StationController {
       await stationService.deleteStation(req.params.id);
       res.status(statusCode.NO_CONTENT).send(); 
     } catch (error) {
-      next(error); 
+      next(error);
     }
   }
 }

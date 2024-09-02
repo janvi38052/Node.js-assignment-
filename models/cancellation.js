@@ -2,7 +2,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 const Ticket = require('./ticket');
-
+// Amitesh: why created at and update at is missing
 const Cancellation = sequelize.define('Cancellation', {
   cancellationId: {
     type: DataTypes.INTEGER,
