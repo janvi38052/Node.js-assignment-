@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 // Initialize Sequelize with database configuration
+// Amitesh: use env variables.
 const sequelize = new Sequelize('test', 'root', 'admin', {
   host: 'localhost',
   dialect: 'mysql',
