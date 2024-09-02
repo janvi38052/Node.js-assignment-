@@ -4,6 +4,7 @@ const errorMessage = require('../utils/errorMessage');
 
 class StationService {
   async createStation(data) {
+    // Amitesh: why this condition
     if (!data.createdBy || !data.updatedBy) {
       throw {
         status: statusCode.BAD_REQUEST,
@@ -19,6 +20,7 @@ class StationService {
 
   async getStationById(stationId) {
     const station = await Station.findByPk(stationId);
+    // Amitesh:  why this validation
     if (!station) {
       throw {
         status: statusCode.NOT_FOUND,
