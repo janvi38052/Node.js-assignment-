@@ -14,6 +14,16 @@ const sequelize = new Sequelize(
   }
 );
 
+<<<<<<< HEAD
+=======
+// Initialize Sequelize with database configuration
+// Amitesh: use env variables.
+const sequelize = new Sequelize('test', 'root', 'admin', {
+  host: 'localhost',
+  dialect: 'mysql',
+  logging: false, // Set to `true` for debugging SQL queries
+});
+>>>>>>> 02e36f4af3a378529ec4c0d70b54cb1cae0d724c
 
 async function testConnection() {
   try {

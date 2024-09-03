@@ -34,6 +34,7 @@ class StationService {
 
   async getStationById(stationId) {
     const station = await Station.findByPk(stationId);
+    // Amitesh:  why this validation
     if (!station) {
       throw {
         status: statusCode.NOT_FOUND,
