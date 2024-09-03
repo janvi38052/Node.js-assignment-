@@ -7,11 +7,6 @@ class StationController {
       const station = await stationService.createStation(req.body);
       res.status(statusCode.CREATED).json(station);
     } catch (error) {
-<<<<<<< HEAD
-      // Amitesh: why next and why did not throw the error?
-=======
-      // Amitesh: why next and  why did not throw the error?
->>>>>>> 02e36f4af3a378529ec4c0d70b54cb1cae0d724c
       next(error); 
     }
   }

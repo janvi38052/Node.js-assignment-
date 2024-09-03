@@ -4,7 +4,7 @@ const errorMessage = require('../utils/errorMessage');
 
 class StationService {
   async createStation(data) {
-    // Amitesh: why this condition
+  
     if (!data.createdBy || !data.updatedBy) {
       throw {
         status: statusCode.BAD_REQUEST,
