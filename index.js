@@ -4,6 +4,8 @@ const errorHandler = require('./middleware/errorHandler');
 const stationRoutes = require('./routes/stationRoutes');
 const trainRoutes = require('./routes/trainRoutes');
 
+
+
 const app = express();
 
 
@@ -27,8 +29,24 @@ async function syncDatabase() {
 }
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3005;
 app.listen(port, async () => {
   console.log(`Server running at http://localhost:${port}/`);
   await syncDatabase();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

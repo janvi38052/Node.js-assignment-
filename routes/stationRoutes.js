@@ -1,14 +1,13 @@
 const express = require('express');
-const StationController = require('../controllers/stationController');
-
 const router = express.Router();
+const StationController = require('../controllers/stationController'); 
 
-// Define routes
-router.post('/', StationController.createStation); // Create a station
-router.get('/', StationController.getAllStations); // Get all stations with pagination
-router.get('/search', StationController.searchStations); // Search stations by query
-router.get('/:id', StationController.getStationById); // Get a station by ID
-router.put('/:id', StationController.updateStation); // Update a station by ID
-router.delete('/:id', StationController.deleteStation); // Delete a station by ID
+
+router.post('/', StationController.createStation); 
+router.get('/', StationController.getAllStations);
+router.get('/search', StationController.searchStations); 
+router.get('/:id', StationController.getStationById); 
+router.put('/:id', StationController.updateStation); 
+router.delete('/:id', StationController.deleteStation); 
 
 module.exports = router;

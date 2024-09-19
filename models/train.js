@@ -19,7 +19,7 @@ const Train = sequelize.define('Train', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  start_time: {
+  startTime: {
     type: DataTypes.DATE,
     allowNull: false,
   },

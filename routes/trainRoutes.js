@@ -3,11 +3,11 @@ const TrainController = require('../controllers/trainController');
 
 const router = express.Router();
 
-router.post('/', TrainController.createTrain); // Create a train
-router.get('/', TrainController.getAllTrains); // Get all trains with pagination
-router.get('/search', TrainController.searchTrains); // Search trains by query
-router.get('/:id', TrainController.getTrainById); // Get a train by ID
-router.put('/:id', TrainController.updateTrain); // Update a train by ID
-router.delete('/:id', TrainController.deleteTrain); // Delete a train by ID
+router.post('/', TrainController.createTrain); 
+router.get('/', TrainController.getAllTrains); 
+router.get('/search', TrainController.searchTrains); 
+router.get('/:id', TrainController.getTrainById); 
+router.put('/:id', TrainController.updateTrain); 
+router.delete('/:id', TrainController.deleteTrain); 
 
 module.exports = router;

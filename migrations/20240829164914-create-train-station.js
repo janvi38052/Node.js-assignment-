@@ -1,26 +1,25 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Trains', {
-      TrainId: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-      },
-      seat_available: {
+    await queryInterface.createTable('TrainStation', {
+      Trainid: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {
+          model: 'train', 
+          key: 'TrainId',
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
       },
-      source: {
-        type: Sequelize.STRING,
+      StationId: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-      },
-      destination: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      start_time: {
-        type: Sequelize.DATE,
-        allowNull: false,
+        references: {
+          model: 'station', 
+          key: 'StationId',
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
       },
       deletedAt: {
         type: Sequelize.DATE,
@@ -48,6 +47,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Trains');
+    await queryInterface.dropTable('TrainStation');
   }
 };

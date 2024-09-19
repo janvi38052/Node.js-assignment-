@@ -6,7 +6,7 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'Passenger',
-          key: 'passengerId'
+          key: 'PassengerId'
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
@@ -16,7 +16,7 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'Train',
-          key: 'trainId'
+          key: 'TrainId'
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',

@@ -1,15 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  class Booking extends Model {
-    static associate(models) {
-      
-      Booking.belongsTo(models.Passenger, { foreignKey: 'PassengerId' });
-      Booking.belongsTo(models.Train, { foreignKey: 'TrainId' });
-    }
-  }
-
-  Booking.init({
+  const Booking = sequelize.define('Booking', {
     BookingId: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -23,15 +15,37 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-   
-    deletedAt: DataTypes.DATE,
-    createdBy: DataTypes.INTEGER,
-    updatedBy: DataTypes.INTEGER,
+    deletedAt: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    createdBy: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    updatedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   }, {
-    sequelize,
-    modelName: 'Booking',
-    timestamps: true
+    timestamps: true,
+    paranoid: true, // Enables soft deletes
   });
+
+  Booking.associate = (models) => {
+    Booking.belongsTo(models.Passenger, { foreignKey: 'PassengerId' });
+    Booking.belongsTo(models.Train, { foreignKey: 'TrainId' });
+  };
 
   return Booking;
 };

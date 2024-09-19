@@ -8,22 +8,22 @@ const Ticket = sequelize.define('Ticket', {
     autoIncrement: true,
     primaryKey: true,
   },
-  passengerId: {
+  PassengerId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
       model: 'Passenger', 
-      key: 'passengerId',
+      key: 'PassengerId',
     },
     onDelete: 'SET NULL',
     onUpdate: 'CASCADE',
   },
-  trainId: {
+  TrainId: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
       model: 'Train',
-      key: 'trainId',
+      key: 'TrainId',
     },
     onDelete: 'SET NULL',
     onUpdate: 'CASCADE',

@@ -3,35 +3,34 @@ const { Model, DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
   class TrainStation extends Model {
     static associate(models) {
-    
       TrainStation.belongsTo(models.Train, {
-        foreignKey: 'Trainid',
+        foreignKey: 'TrainId',
         as: 'train',
       });
       TrainStation.belongsTo(models.Station, {
-        foreignKey: 'Stationid',
+        foreignKey: 'StationId',
         as: 'station',
       });
     }
   }
 
   TrainStation.init({
-    Trainid: {
+    TrainId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Train', 
-        key: 'Trainid',
+        model: 'train', 
+        key: 'TrainId',
       },
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',
     },
-    Stationid: {
+    StationId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Station', 
-        key: 'Stationid',
+        model: 'station', 
+        key: 'StationId',
       },
       onDelete: 'CASCADE',
       onUpdate: 'CASCADE',

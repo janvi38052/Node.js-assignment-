@@ -6,12 +6,12 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      passengerId: {
+      PassengerId: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {
           model: 'Passenger',
-          key: 'passengerId',
+          key: 'PassengerId',
         },
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
@@ -21,7 +21,7 @@ module.exports = {
         allowNull: true,
         references: {
           model: 'Train',
-          key: 'trainId',
+          key: 'TrainId',
         },
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
@@ -61,6 +61,16 @@ module.exports = {
       updatedBy: {
         type: Sequelize.INTEGER,
         allowNull: false,
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
       },
     });
   },

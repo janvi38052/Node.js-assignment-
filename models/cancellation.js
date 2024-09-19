@@ -2,11 +2,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 const Ticket = require('./ticket');
-<<<<<<< HEAD
-// Amitesh: why created at and update at is missing
-=======
-// Amitesh: why created at and update at is missing 
->>>>>>> 02e36f4af3a378529ec4c0d70b54cb1cae0d724c
 const Cancellation = sequelize.define('Cancellation', {
   cancellationId: {
     type: DataTypes.INTEGER,

@@ -9,6 +9,14 @@ const Payment = sequelize.define('Payment', {
     autoIncrement: true,
     primaryKey: true,
   },
+  paymentMethod: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  amount: {
+    type: DataTypes.DECIMAL,
+    allowNull: false,
+  },
   ticketId: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -19,14 +27,8 @@ const Payment = sequelize.define('Payment', {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE',
   },
-  amount: {
-    type: DataTypes.DECIMAL,
-    allowNull: false,
-  },
-  paymentDate: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
+  
+ 
   deletedAt: {
     type: DataTypes.DATE,
     allowNull: true,

@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
-const Station = require('../models/station')(require('../db'));
-const statusCode = require('../utils/statusCode');
-const errorMessage = require('../utils/errorMessage');
+const Station = require('../models/station')(require('../db')); // Import your model
+const statusCode = require('../utils/statusCode'); // Status codes
+const errorMessage = require('../utils/errorMessage'); // Error messages
 
 class StationService {
   async createStation(data) {
@@ -20,7 +20,7 @@ class StationService {
     const { count, rows } = await Station.findAndCountAll({
       limit: pageSize,
       offset: offset,
-      order: [['StationId', 'ASC']], 
+      order: [['StationId', 'ASC']],
     });
 
     return {
@@ -43,7 +43,7 @@ class StationService {
       },
       limit: pageSize,
       offset: offset,
-      order: [['StationId', 'ASC']], 
+      order: [['StationId', 'ASC']],
     });
 
     return {

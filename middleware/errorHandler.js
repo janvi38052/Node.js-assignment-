@@ -8,11 +8,10 @@ const errorHandler = (err, req, res, next) => {
   const status = err.status || statusCodes.INTERNAL_SERVER_ERROR;
   const message = err.message || errorMessages.INTERNAL_ERROR;
 
-  res.status(status).json({
-    error: {
-      message: message
-    }
-  });
+  res.status(status).json({error: {message: message } });
 };
 
-module.exports = errorHandler;
+module.exports = errorHandler
+
+
+

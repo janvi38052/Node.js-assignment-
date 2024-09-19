@@ -1,7 +1,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('RailwayCompany', {
-      railwayCompanyId: {
+      RailwayCompanyid: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         primaryKey: true,
@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      establishedYear: {
+      established_date: {
         type: Sequelize.INTEGER,
         allowNull: true,
       },
@@ -29,6 +29,16 @@ module.exports = {
       updatedBy: {
         type: Sequelize.INTEGER,
         allowNull: false,
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
       },
     });
   },

@@ -1,4 +1,4 @@
-// utils/errorMessages.js
+
 module.exports = {
     VALIDATION_ERROR: 'Validation error',
     NOT_FOUND: 'Resource not found',

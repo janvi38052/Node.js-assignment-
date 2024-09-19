@@ -17,10 +17,19 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    address: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+
+
+
     deletedAt: DataTypes.DATE,
     createdBy: DataTypes.INTEGER,
     updatedBy: DataTypes.INTEGER
-  }, {
+  },
+  
+   {
     sequelize,
     modelName: 'Passenger',
     timestamps: true

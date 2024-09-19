@@ -4,12 +4,12 @@ const Passenger = require('./passenger');
 const Train = require('./train'); 
 
 const PassengerTrain = sequelize.define('PassengerTrain', {
-    passengerId: {  
+    PassengerId: {  
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Passenger', 
-            key: 'passengerId'
+            key: 'PassengerId'
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
@@ -19,7 +19,7 @@ const PassengerTrain = sequelize.define('PassengerTrain', {
         allowNull: false,
         references: {
             model: 'Train',
-            key: 'trainId'
+            key: 'TrainId'
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
@@ -42,7 +42,7 @@ const PassengerTrain = sequelize.define('PassengerTrain', {
 });
 
 
-PassengerTrain.belongsTo(Passenger, { foreignKey: 'passengerId' });
-PassengerTrain.belongsTo(Train, { foreignKey: 'trainId' });
+PassengerTrain.belongsTo(Passenger, { foreignKey: 'PassengerId' });
+PassengerTrain.belongsTo(Train, { foreignKey: 'TrainId' });
 
 module.exports = PassengerTrain;
